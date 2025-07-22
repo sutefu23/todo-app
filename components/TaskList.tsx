@@ -11,14 +11,14 @@ interface TaskListProps {
 export default function TaskList({ tasks, onToggleComplete, onEdit, onDelete }: TaskListProps) {
   if (tasks.length === 0) {
     return (
-      <div className="bg-white rounded-lg shadow p-8 text-center">
+      <div className="bg-white rounded-lg shadow p-8 text-center hover:shadow-md transition-shadow duration-200">
         <p className="text-gray-500">タスクがありません。新しいタスクを追加してください。</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-lg shadow">
+    <div className="bg-white rounded-lg shadow hover:shadow-md transition-shadow duration-200">
       <div className="divide-y divide-gray-200">
         {tasks.map((task) => (
           <TaskItem
