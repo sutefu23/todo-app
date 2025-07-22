@@ -1,5 +1,6 @@
 import { Task } from "@/types/task";
 import { STORAGE_KEY } from "./constants";
+import { migrateData } from "./migration";
 
 export const loadTasks = (): Task[] => {
   if (typeof window === "undefined") return [];
@@ -8,12 +9,16 @@ export const loadTasks = (): Task[] => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (!stored) return [];
     
-    const tasks = JSON.parse(stored);
+    const rawData = JSON.parse(stored);
     
     // データ検証
-    if (!Array.isArray(tasks)) return [];
+    if (!Array.isArray(rawData)) return [];
     
-    return tasks.filter((task): task is Task => {
+    // マイグレーション適用
+    const migratedData = migrateData(rawData);
+    
+    // 最終的なデータ検証
+    const validTasks = migratedData.filter((task): task is Task => {
       return (
         typeof task === "object" &&
         task !== null &&
@@ -25,6 +30,13 @@ export const loadTasks = (): Task[] => {
         (task.dueDate === undefined || typeof task.dueDate === "string")
       );
     });
+
+    // マイグレーション後のデータを保存
+    if (validTasks.length !== rawData.length) {
+      saveTasks(validTasks);
+    }
+
+    return validTasks;
   } catch (error) {
     console.error("Failed to load tasks from localStorage:", error);
     return [];
