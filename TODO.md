@@ -6,15 +6,15 @@ SPECIFICATION.mdに基づいたシンプルなTODOアプリケーションの構
 ## 📋 実装タスク
 
 ### Phase 1: 環境構築とプロジェクトセットアップ
-- [ ] Next.js 14プロジェクトの初期化
-  - [ ] `npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias "@/*"`
-  - [ ] 不要なファイルの削除（README.md以外）
-  - [ ] `.gitignore`の確認と調整
-- [ ] プロジェクト構造の作成
-  - [ ] `components/`ディレクトリ作成
-  - [ ] `hooks/`ディレクトリ作成
-  - [ ] `types/`ディレクトリ作成
-  - [ ] `utils/`ディレクトリ作成
+- [x] Next.js 14プロジェクトの初期化
+  - [x] `npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias "@/*"`
+  - [x] 不要なファイルの削除（README.md以外）
+  - [x] `.gitignore`の確認と調整
+- [x] プロジェクト構造の作成
+  - [x] `components/`ディレクトリ作成
+  - [x] `hooks/`ディレクトリ作成
+  - [x] `types/`ディレクトリ作成
+  - [x] `utils/`ディレクトリ作成
 
 ### Phase 2: 型定義とデータ構造
 - [ ] Task型の定義（`types/task.ts`）
