@@ -17,7 +17,7 @@ SPECIFICATION.mdに基づいたシンプルなTODOアプリケーションの構
   - [x] `utils/`ディレクトリ作成
 
 ### Phase 2: 型定義とデータ構造
-- [ ] Task型の定義（`types/task.ts`）
+- [x] Task型の定義（`types/task.ts`）
   ```typescript
   interface Task {
     id: string;
@@ -28,7 +28,7 @@ SPECIFICATION.mdに基づいたシンプルなTODOアプリケーションの構
     updatedAt: string;
   }
   ```
-- [ ] ローカルストレージのキー定数定義
+- [x] ローカルストレージのキー定数定義
 
 ### Phase 3: 基本UIコンポーネントの作成
 - [ ] レイアウトの実装（`app/layout.tsx`）
