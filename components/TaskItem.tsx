@@ -102,7 +102,11 @@ export default function TaskItem({ task, onToggleComplete, onEdit, onDelete }: T
             編集
           </button>
           <button
-            onClick={() => onDelete(task.id)}
+            onClick={() => {
+              if (window.confirm("このタスクを削除してもよろしいですか？")) {
+                onDelete(task.id);
+              }
+            }}
             className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
           >
             削除
