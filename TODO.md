@@ -31,26 +31,26 @@ SPECIFICATION.mdに基づいたシンプルなTODOアプリケーションの構
 - [x] ローカルストレージのキー定数定義
 
 ### Phase 3: 基本UIコンポーネントの作成
-- [ ] レイアウトの実装（`app/layout.tsx`）
-  - [ ] ヘッダー「TODO App」の設定
-  - [ ] 基本的なスタイリング
-- [ ] メインページの基本構造（`app/page.tsx`）
-- [ ] TaskFormコンポーネント（`components/TaskForm.tsx`）
-  - [ ] タスク名入力フィールド
-  - [ ] 期限選択（日付ピッカー）
-  - [ ] 追加ボタン
-  - [ ] Enterキーでの追加対応
-- [ ] TaskListコンポーネント（`components/TaskList.tsx`）
-  - [ ] タスク一覧の表示
-  - [ ] 空の状態の表示
-- [ ] TaskItemコンポーネント（`components/TaskItem.tsx`）
-  - [ ] チェックボックス
-  - [ ] タスク名表示
-  - [ ] 期限表示
-  - [ ] 編集ボタン
-  - [ ] 削除ボタン
-- [ ] TaskFilterコンポーネント（`components/TaskFilter.tsx`）
-  - [ ] 完了済み表示切り替えトグル
+- [x] レイアウトの実装（`app/layout.tsx`）
+  - [x] ヘッダー「TODO App」の設定
+  - [x] 基本的なスタイリング
+- [x] メインページの基本構造（`app/page.tsx`）
+- [x] TaskFormコンポーネント（`components/TaskForm.tsx`）
+  - [x] タスク名入力フィールド
+  - [x] 期限選択（日付ピッカー）
+  - [x] 追加ボタン
+  - [x] Enterキーでの追加対応
+- [x] TaskListコンポーネント（`components/TaskList.tsx`）
+  - [x] タスク一覧の表示
+  - [x] 空の状態の表示
+- [x] TaskItemコンポーネント（`components/TaskItem.tsx`）
+  - [x] チェックボックス
+  - [x] タスク名表示
+  - [x] 期限表示
+  - [x] 編集ボタン
+  - [x] 削除ボタン
+- [x] TaskFilterコンポーネント（`components/TaskFilter.tsx`）
+  - [x] 完了済み表示切り替えトグル
 
 ### Phase 4: 状態管理とビジネスロジック
 - [ ] useTodosカスタムフック（`hooks/useTodos.ts`）
