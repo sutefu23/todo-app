@@ -1,11 +1,13 @@
 "use client";
 
+import { memo } from "react";
+
 interface TaskFilterProps {
   showCompleted: boolean;
   onToggleShowCompleted: (show: boolean) => void;
 }
 
-export default function TaskFilter({ showCompleted, onToggleShowCompleted }: TaskFilterProps) {
+const TaskFilter = memo(function TaskFilter({ showCompleted, onToggleShowCompleted }: TaskFilterProps) {
   return (
     <div className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow duration-200">
       <label className="flex items-center gap-2 cursor-pointer group">
@@ -21,4 +23,6 @@ export default function TaskFilter({ showCompleted, onToggleShowCompleted }: Tas
       </label>
     </div>
   );
-}
+});
+
+export default TaskFilter;

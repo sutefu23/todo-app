@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, memo } from "react";
 import { Task } from "@/types/task";
 
 interface TaskItemProps {
@@ -10,7 +10,7 @@ interface TaskItemProps {
   onDelete: (id: string) => void;
 }
 
-export default function TaskItem({ task, onToggleComplete, onEdit, onDelete }: TaskItemProps) {
+const TaskItem = memo(function TaskItem({ task, onToggleComplete, onEdit, onDelete }: TaskItemProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(task.title);
   const [editDueDate, setEditDueDate] = useState(task.dueDate || "");
@@ -124,4 +124,6 @@ export default function TaskItem({ task, onToggleComplete, onEdit, onDelete }: T
       )}
     </div>
   );
-}
+});
+
+export default TaskItem;

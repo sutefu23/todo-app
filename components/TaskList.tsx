@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Task } from "@/types/task";
 import TaskItem from "./TaskItem";
 
@@ -8,7 +9,7 @@ interface TaskListProps {
   onDelete: (id: string) => void;
 }
 
-export default function TaskList({ tasks, onToggleComplete, onEdit, onDelete }: TaskListProps) {
+const TaskList = memo(function TaskList({ tasks, onToggleComplete, onEdit, onDelete }: TaskListProps) {
   if (tasks.length === 0) {
     return (
       <div className="bg-white rounded-lg shadow p-8 text-center hover:shadow-md transition-shadow duration-200">
@@ -32,4 +33,6 @@ export default function TaskList({ tasks, onToggleComplete, onEdit, onDelete }: 
       </div>
     </div>
   );
-}
+});
+
+export default TaskList;

@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, memo } from "react";
 
 interface TaskFormProps {
   onAddTask: (title: string, dueDate?: string) => void;
 }
 
-export default function TaskForm({ onAddTask }: TaskFormProps) {
+const TaskForm = memo(function TaskForm({ onAddTask }: TaskFormProps) {
   const [title, setTitle] = useState("");
   const [dueDate, setDueDate] = useState("");
 
@@ -76,4 +76,6 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
       </div>
     </form>
   );
-}
+});
+
+export default TaskForm;
