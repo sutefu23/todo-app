@@ -12,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <body className="bg-gray-50 text-gray-900">
+    <html lang="ja" suppressHydrationWarning>
+      <body className="bg-gray-50 text-gray-900" suppressHydrationWarning>
         <header className="bg-white shadow-sm">
           <div className="container mx-auto px-4 py-4">
             <h1 className="text-2xl font-bold text-center">TODO App</h1>

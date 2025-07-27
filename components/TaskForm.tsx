@@ -20,7 +20,8 @@ const TaskForm = memo(function TaskForm({ onAddTask }: TaskFormProps) {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && !e.shiftKey) {
+    // IMEの変換中（isComposing）の場合はEnterキーを無視
+    if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
       e.preventDefault();
       handleSubmit(e as any);
     }
