@@ -17,7 +17,8 @@ export default function Home() {
     toggleComplete,
   } = useTodos();
 
-  if (isLoading) {
+  // 静的サイトでも動作するように、初期表示では空のタスクリストを表示
+  if (isLoading && typeof window !== 'undefined') {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-gray-500">読み込み中...</div>

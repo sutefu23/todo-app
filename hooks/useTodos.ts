@@ -8,13 +8,21 @@ export const useTodos = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [showCompleted, setShowCompleted] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+  const [isClient, setIsClient] = useState(false);
+
+  // クライアントサイドかどうかを判定
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // 初回ロード
   useEffect(() => {
-    const loaded = loadTasks();
-    setTasks(loaded);
-    setIsLoading(false);
-  }, []);
+    if (isClient) {
+      const loaded = loadTasks();
+      setTasks(loaded);
+      setIsLoading(false);
+    }
+  }, [isClient]);
 
   // 変更時の自動保存
   useEffect(() => {
